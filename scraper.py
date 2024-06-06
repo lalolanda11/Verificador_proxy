@@ -10,7 +10,9 @@ print(sys.platform)
 print('ESpera un momento ......')
 time.sleep(2)
 
-sitio='https://free-proxy-list.net/'
+#sitio='https://free-proxy-list.net/'
+
+sitio='https://www.socks-proxy.net/'
 def respuesta():
 	res=requests.get(sitio)
 	sp=BeautifulSoup(res.content,'html.parser')
@@ -37,10 +39,16 @@ def rasp():
 		dato=open("proxies.txt","r").readlines()
 		abrir=open("proxies.txt","w")
 		for i in dato[3:299]:
-			abrir.write(str(i))
+			
+			abrir.write('socks4'+"	"+str(i).replace(":",'	'))
 			abrir.flush()
 		#abrir.write(str(dato[3:299]))
 		abrir.close()
+
+		#dato=open("proxies.txt","r").readlines()
+		#abrir=open("proxies.txt","w")
+		
+
 		print('Se han guardado los proxies')
 if __name__=='__main__':
 	print('a para checar los proxys mas recientes\nb para guardarlos')
