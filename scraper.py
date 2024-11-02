@@ -51,7 +51,7 @@ def rasp():
 
 		print('Se han guardado los proxies')
 if __name__=='__main__':
-	print('a para checar los proxys mas recientes\nb para guardarlos')
+	print('[a] para checar los proxys mas recientes\n[b] para guardarlos')
 	opcion=input('introduce la opcion :')
 	if opcion == 'a':
 		respuesta()
